@@ -24,7 +24,7 @@ module ApplicationHelper
     star2 = "star2.gif"
 
     # フィーバー機能
-    star2 = "star3.gif" if (rand * rate).to_i % rate == 1 
+    star2 = "star3.gif" if (rand * rate).to_i % rate == 0 
 
     if big_star
       result = image_tag(star1, :size => "30x30", :mouseover => star2) * (number / weight)
