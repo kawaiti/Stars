@@ -4,6 +4,8 @@
 #Copyright:: Copyright 2009 newness
 class Admin::TopController < ApplicationController
 
+  layout "admin/admin_template"
+
   #== トップページを表示
   #
   #==== 引数

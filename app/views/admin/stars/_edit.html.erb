@@ -1,0 +1,22 @@
+<% form_for(@star, :url => { :action => action, :id => target }) do |f| %>
+  <% members = Member.find(:all) %>
+  <table>
+    <tr>
+      <th><%= f.label(:id, "ID") %></th>
+      <td><%= f.text_field(:id) %></td>
+    </tr>
+    <tr>
+      <th><%= f.label(:sender_id, "送り主") %></th>
+      <td><%= f.collection_select(:sender_id, members, :id, :name) %></td>
+    </tr>
+    <tr>
+      <th><%= f.label(:receiver_id, "受取主") %></th>
+      <td><%= f.collection_select(:receiver_id, members, :id, :name) %></td>
+    </tr>
+    <tr>
+      <th><%= f.label(:activity_id, "活動内容") %></th>
+      <td><%= f.collection_select(:activity_id, Activity.find(:all), :id, :name) %></td>
+    </tr>
+  </table>
+  <%= submit_tag("登録") %>
+<% end %>

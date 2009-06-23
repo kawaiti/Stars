@@ -71,7 +71,7 @@ class Admin::ActivitiesController < ApplicationController
   def update
     @activity = Activity.find(params[:id])
     @activity.attributes = params[:activity]
-    unless @activity.update
+    unless @activity.save
       message = "データの更新に失敗しました。"
       model_errors(:errors => @activity.errors, :message => message)
     end

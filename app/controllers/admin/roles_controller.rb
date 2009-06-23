@@ -67,7 +67,7 @@ class Admin::RolesController < ApplicationController
   def update
     @role = Role.find(params[:id])
     @role.attributes = params[:role]
-    unless @role.update
+    unless @role.save
       message = "データの更新に失敗しました。"
       model_errors(:errors => @role.errors, :message => message)
     end

@@ -72,7 +72,7 @@ class Admin::MembersController < ApplicationController
   def update
     @member = Member.find(params[:id])
     @member.attributes = params[:member]
-    unless @member.update
+    unless @member.save
       message = "データの更新に失敗しました。"
       model_errors(:errors => @member.errors, :message => message)
       redirect_to :action => :edit

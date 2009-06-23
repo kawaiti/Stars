@@ -1,16 +1,18 @@
 <table>
   <tr>
     <th>ID</th>
-    <th><%= show_stars %>送り主</th>
-    <th><%= show_stars %>受取主</th>
+    <th>メンバー名</th>
     <th>活動内容</th>
+    <th>活動詳細</th>
+    <th>獲得<%= show_stars %>数</th>
   </tr>
   <% @activities.each do |a| %>
     <tr>
-      <td><%= a.id %></td>
-      <td><%= a.sender.name unless a.sender.nil? %></td>
-      <td><%= a.receiver.name unless a.receiver.nil? %></td>
-      <td><%= a.activity.name unless a.activity.nil? %></td>
+      <td><%= link_to("#{a.id}", :action => :edit, :id => a.id) %></td>
+      <td><%= link_to("#{a.member.name}", :controller => :members, :action => :edit, :id => a.member_id) %></td>
+      <td><%= a.name %></td>
+      <td><%= truncate(a.detail, :length => 20) %></td>
+      <td><%= show_stars(:number => a.stars.size) unless a.stars.nil? %></td>
     </tr>
   <% end %>
 </table>

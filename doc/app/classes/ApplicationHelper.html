@@ -83,6 +83,13 @@ application.
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000027">show_stars</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -99,6 +106,78 @@ application.
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+          <a href="#M000027" class="method-signature">
+          <span class="method-name">show_stars</span><span class="method-args">(options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h2>星を表示するヘルパーメソッド</h2>
+<h4>引数</h4>
+<ul>
+<li>:number =&gt; integer : 星の数（デフォルト値：1）
+
+</li>
+<li>:weight =&gt; integer : 大きい星の重み（デフォルト値：10）
+
+</li>
+<li>:rate =&gt; integer :
+フィーバー機能発動レート（デフォルト値：100）
+
+</li>
+<li>:big_star =&gt; true | false :
+大きい星を使う（デフォルト値：true）
+
+</li>
+</ul>
+<h4>戻り値</h4>
+<ul>
+<li>image_tag
+
+</li>
+</ul>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/helpers/application_helper.rb, line 14</span>
+14:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_stars</span>(<span class="ruby-identifier">options</span> = {})
+15:     <span class="ruby-identifier">result</span> = <span class="ruby-value str">&quot;&quot;</span> 
+16:     <span class="ruby-identifier">number</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:number</span>] <span class="ruby-operator">||</span> <span class="ruby-value">1</span>
+17:     <span class="ruby-identifier">weight</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:weight</span>] <span class="ruby-operator">||</span> <span class="ruby-value">10</span>
+18:     <span class="ruby-identifier">rate</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:rate</span>] <span class="ruby-operator">||</span> <span class="ruby-value">100</span>
+19:     <span class="ruby-identifier">rate</span> = <span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rate</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+20:     <span class="ruby-identifier">big_star</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:big_star</span>]
+21:     <span class="ruby-identifier">big_star</span> = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">big_star</span>.<span class="ruby-identifier">nil?</span>
+22: 
+23:     <span class="ruby-identifier">star1</span> = <span class="ruby-value str">&quot;star1.gif&quot;</span>
+24:     <span class="ruby-identifier">star2</span> = <span class="ruby-value str">&quot;star2.gif&quot;</span>
+25: 
+26:     <span class="ruby-comment cmt"># フィーバー機能</span>
+27:     <span class="ruby-identifier">star2</span> = <span class="ruby-value str">&quot;star3.gif&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">rand</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">rate</span>).<span class="ruby-identifier">to_i</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">rate</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> 
+28: 
+29:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">big_star</span>
+30:       <span class="ruby-identifier">result</span> = <span class="ruby-identifier">image_tag</span>(<span class="ruby-identifier">star1</span>, <span class="ruby-identifier">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;30x30&quot;</span>, <span class="ruby-identifier">:mouseover</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">star2</span>) <span class="ruby-operator">*</span> (<span class="ruby-identifier">number</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">weight</span>)
+31:       <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">image_tag</span>(<span class="ruby-identifier">star1</span>, <span class="ruby-identifier">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;20x20&quot;</span>, <span class="ruby-identifier">:mouseover</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">star2</span>) <span class="ruby-operator">*</span> (<span class="ruby-identifier">number</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">weight</span>)
+32:     <span class="ruby-keyword kw">else</span>
+33:       <span class="ruby-identifier">result</span> = <span class="ruby-identifier">image_tag</span>(<span class="ruby-identifier">star1</span>, <span class="ruby-identifier">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;20x20&quot;</span>, <span class="ruby-identifier">:mouseover</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">star2</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">number</span>
+34:     <span class="ruby-keyword kw">end</span>
+35:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+36:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

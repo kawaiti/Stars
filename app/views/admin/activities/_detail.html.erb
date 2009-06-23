@@ -4,6 +4,10 @@
     <td><%= @activity.id %></td>
   </tr>
   <tr>
+    <th>メンバー名</th>
+    <td><%= @activity.member.name unless @activity.member.nil? %></td>
+  </tr>
+  <tr>
     <th>活動内容</th>
     <td><%= @activity.name %></td>
   </tr>

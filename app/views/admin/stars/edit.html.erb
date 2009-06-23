@@ -1,0 +1,3 @@
+<h1>スター編集</h1>
+<%= link_to("削除", :action => :delete, :id => @star.id) %>
+<%= render :partial => "edit", :locals => { :action => :update, :target => @star.id } %>
