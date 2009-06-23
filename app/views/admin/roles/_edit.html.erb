@@ -1,0 +1,17 @@
+<% form_for(@role, :url => { :action => target }) do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label(:id, "ID") %></th>
+      <td><%= f.text_field(:id) %></td>
+    </tr>
+    <tr>
+      <th><%= f.label(:name, "役割名") %></th>
+      <td><%= f.text_field(:name) %></td>
+    </tr>
+    <tr>
+      <th><%= f.label(:default_stars, "初期" + show_stars + "の数") %></th>
+      <td><%= f.text_field(:default_stars) %></td>
+    </tr>
+  </table>
+  <%= submit_tag("登録") %>
+<% end %>
