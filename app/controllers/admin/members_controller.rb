@@ -3,6 +3,9 @@
 #Author:: かわはら
 #Copyright:: Copyright 2009 newness
 class Admin::MembersController < ApplicationController
+
+  layout "admin/admin_template"
+
   #== メンバーの一覧を表示 
   #
   #==== 引数 
@@ -37,6 +40,7 @@ class Admin::MembersController < ApplicationController
 
     @member.attributes = params[:member]
     @member.own_stars = role.default_stars || 0
+    @member.received_stars = 0
 
     unless @member.save
       message = "データの保存に失敗しました。"
@@ -56,7 +60,7 @@ class Admin::MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
-  #== メンバーの編集
+  #== メンバーの更新
   # 
   #==== 引数
   #* params[:id] => 編集対象のMemberモデルのID

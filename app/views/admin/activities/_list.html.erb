@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th><%= show_stars %>送り主</th>
+    <th><%= show_stars %>受取主</th>
+    <th>活動内容</th>
+  </tr>
+  <% @activities.each do |a| %>
+    <tr>
+      <td><%= a.id %></td>
+      <td><%= a.sender.name unless a.sender.nil? %></td>
+      <td><%= a.receiver.name unless a.receiver.nil? %></td>
+      <td><%= a.activity.name unless a.activity.nil? %></td>
+    </tr>
+  <% end %>
+</table>

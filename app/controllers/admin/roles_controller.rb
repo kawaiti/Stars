@@ -4,6 +4,9 @@
 #Author:: かわはら
 #Copyright:: Copyright 2009 newness
 class Admin::RolesController < ApplicationController
+
+  layout "admin/admin_template"
+
   #== 役割の一覧表示
   #
   #==== 引数

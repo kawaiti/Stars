@@ -12,11 +12,11 @@
     <td><%= @member.role.name %></td>
   </tr>
   <tr>
-    <th>残りSTAR数</th>
+    <th>残り<%= show_stars %>数</th>
     <td><%= @member.own_stars %></td>
   </tr>
   <tr>
-    <th>受け取ったSTAR数</th>
+    <th>受け取った<%= show_stars %>数</th>
     <td><%= @member.received_stars %></td>
   </tr>
 </table>
