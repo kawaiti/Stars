@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>名前</th>
+    <th>役割</th>
+    <th>残りSTAR数</th>
+    <th>受け取ったSTAR数</th>
+  </tr>
+  <% @members.each do |m| %>
+    <tr>
+      <td><%= link_to("#{m.id}", :action => :edit, :id => m.id) %></td>
+      <td><%= m.name %></td>
+      <td><%= m.role.name unless m.role.nil? %></td>
+      <td><%= m.own_stars %></td>
+      <td><%= m.received_stars %></td>
+    </tr>
+  <% end %>
+</table>

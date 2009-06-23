@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <td><%= @member.id %></td>
+  </tr>
+  <tr>
+    <th>名前</th>
+    <td><%= @member.name %></td>
+  </tr>
+  <tr>
+    <th>役割</th>
+    <td><%= @member.role.name %></td>
+  </tr>
+  <tr>
+    <th>残りSTAR数</th>
+    <td><%= @member.own_stars %></td>
+  </tr>
+  <tr>
+    <th>受け取ったSTAR数</th>
+    <td><%= @member.received_stars %></td>
+  </tr>
+</table>

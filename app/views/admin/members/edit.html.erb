@@ -1,0 +1,3 @@
+<h1>メンバー編集</h1>
+<%= link_to("削除", :action => :delete, :id => @member.id) %><br />
+<%= render :partial => "edit", :locals => { :target => update } %>

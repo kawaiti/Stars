@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  role_id: 1
+  own_stars: 1
+  received_stars: 1
+
+two:
+  name: MyString
+  role_id: 1
+  own_stars: 1
+  received_stars: 1
