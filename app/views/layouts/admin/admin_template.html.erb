@@ -1,10 +1,12 @@
 <html>
 <head>
   <title>Positive Feedback System 管理画面</title>
+  <%= javascript_include_tag :defaults %>
 </head>
-<body>
+<body onload="suprise()">
 <%= render :partial => "layouts/admin/header", :use_full_path => true %>
 <%= yield %>
 <%= render :partial => "layouts/admin/footer", :use_full_path => true %>
+<%= show_suprise %>
 </body>
 </html>

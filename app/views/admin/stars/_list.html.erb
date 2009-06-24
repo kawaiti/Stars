@@ -7,7 +7,7 @@
   </tr>
   <% @stars.each do |s| %>
     <tr>
-      <td><%= s.id %></td>
+      <td><%= link_to("#{s.id}", :action => :edit, :id => s.id) %></td>
       <td><%= s.sender.name unless s.sender.nil? %></td>
       <td><%= s.receiver.name unless s.receiver.nil? %></td>
       <td><%= s.activity.name unless s.activity.nil? %></td>

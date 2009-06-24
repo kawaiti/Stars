@@ -41,13 +41,6 @@ class Admin::StarsController < ApplicationController
   def create
     @star = Star.new
     @star.attributes = params[:star]
-    sender = Member.find(@star.sender_id)
-    sender.own_stars -= 1
-    unless sender.save
-      message = "データの保存に失敗しました。"
-      model_errors(:errors => @sender.errors, :message => message)
-      return
-    end
     unless @star.save
       message = "データの保存に失敗しました。"
       model_errors(:errors => @star.errors, :message => message)

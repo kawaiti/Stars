@@ -39,7 +39,7 @@ class Admin::MembersController < ApplicationController
     role = Role.find(params[:member][:role_id])
 
     @member.attributes = params[:member]
-    @member.own_stars = role.default_stars || 0
+    @member.sent_stars = 0
     @member.received_stars = 0
 
     unless @member.save

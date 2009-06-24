@@ -11,7 +11,7 @@
       <td><%= link_to("#{m.id}", :action => :edit, :id => m.id) %></td>
       <td><%= m.name %></td>
       <td><%= m.role.name unless m.role.nil? %></td>
-      <td><%= show_stars(:number => m.own_stars) %></td>
+      <td><%= show_stars(:number => (m.role.default_stars - m.sent_stars)) %></td>
       <td><%= show_stars(:number => m.received_stars) %></td>
     </tr>
   <% end %>

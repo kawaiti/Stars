@@ -100,12 +100,12 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000022">create</a>&nbsp;&nbsp;
-      <a href="#M000025">delete</a>&nbsp;&nbsp;
-      <a href="#M000023">edit</a>&nbsp;&nbsp;
-      <a href="#M000020">index</a>&nbsp;&nbsp;
-      <a href="#M000021">new</a>&nbsp;&nbsp;
-      <a href="#M000024">update</a>&nbsp;&nbsp;
+      <a href="#M000023">create</a>&nbsp;&nbsp;
+      <a href="#M000026">delete</a>&nbsp;&nbsp;
+      <a href="#M000024">edit</a>&nbsp;&nbsp;
+      <a href="#M000021">index</a>&nbsp;&nbsp;
+      <a href="#M000022">new</a>&nbsp;&nbsp;
+      <a href="#M000025">update</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -127,11 +127,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000022" class="method-detail">
-        <a name="M000022"></a>
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
 
         <div class="method-heading">
-          <a href="#M000022" class="method-signature">
+          <a href="#M000023" class="method-signature">
           <span class="method-name">create</span><span class="method-args">()</span>
           </a>
         </div>
@@ -151,35 +151,28 @@
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000022-source">
+            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000023-source">
 <pre>
     <span class="ruby-comment cmt"># File app/controllers/admin/stars_controller.rb, line 41</span>
 41:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>
 42:     <span class="ruby-ivar">@star</span> = <span class="ruby-constant">Star</span>.<span class="ruby-identifier">new</span>
 43:     <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:star</span>]
-44:     <span class="ruby-identifier">sender</span> = <span class="ruby-constant">Member</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@star</span>.<span class="ruby-identifier">sender_id</span>)
-45:     <span class="ruby-identifier">sender</span>.<span class="ruby-identifier">own_stars</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
-46:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">sender</span>.<span class="ruby-identifier">save</span>
-47:       <span class="ruby-identifier">message</span> = <span class="ruby-value str">&quot;データの保存に失敗しました。&quot;</span>
-48:       <span class="ruby-identifier">model_errors</span>(<span class="ruby-identifier">:errors</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@sender</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">message</span>)
-49:       <span class="ruby-keyword kw">return</span>
-50:     <span class="ruby-keyword kw">end</span>
-51:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">save</span>
-52:       <span class="ruby-identifier">message</span> = <span class="ruby-value str">&quot;データの保存に失敗しました。&quot;</span>
-53:       <span class="ruby-identifier">model_errors</span>(<span class="ruby-identifier">:errors</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">message</span>)
-54:     <span class="ruby-keyword kw">end</span>
-55:   <span class="ruby-keyword kw">end</span>
+44:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">save</span>
+45:       <span class="ruby-identifier">message</span> = <span class="ruby-value str">&quot;データの保存に失敗しました。&quot;</span>
+46:       <span class="ruby-identifier">model_errors</span>(<span class="ruby-identifier">:errors</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">message</span>)
+47:     <span class="ruby-keyword kw">end</span>
+48:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000025" class="method-detail">
-        <a name="M000025"></a>
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
 
         <div class="method-heading">
-          <a href="#M000025" class="method-signature">
+          <a href="#M000026" class="method-signature">
           <span class="method-name">delete</span><span class="method-args">()</span>
           </a>
         </div>
@@ -200,27 +193,27 @@ href="../Star.html">Star</a>モデルのID
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000025-source">
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
 <pre>
-     <span class="ruby-comment cmt"># File app/controllers/admin/stars_controller.rb, line 95</span>
- 95:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>
- 96:     <span class="ruby-ivar">@star</span> = <span class="ruby-constant">Star</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
- 97:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">destroy</span>
- 98:       <span class="ruby-identifier">message</span> = <span class="ruby-value str">&quot;データの削除に失敗しました。&quot;</span>
- 99:       <span class="ruby-identifier">model_errors</span>(<span class="ruby-identifier">:errors</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">message</span>)
-100:     <span class="ruby-keyword kw">end</span>
-101:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/stars_controller.rb, line 88</span>
+88:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>
+89:     <span class="ruby-ivar">@star</span> = <span class="ruby-constant">Star</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+90:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">destroy</span>
+91:       <span class="ruby-identifier">message</span> = <span class="ruby-value str">&quot;データの削除に失敗しました。&quot;</span>
+92:       <span class="ruby-identifier">model_errors</span>(<span class="ruby-identifier">:errors</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">message</span>)
+93:     <span class="ruby-keyword kw">end</span>
+94:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000023" class="method-detail">
-        <a name="M000023"></a>
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
 
         <div class="method-heading">
-          <a href="#M000023" class="method-signature">
+          <a href="#M000024" class="method-signature">
           <span class="method-name">edit</span><span class="method-args">()</span>
           </a>
         </div>
@@ -241,23 +234,23 @@ href="../Star.html">Star</a>モデルのID
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000023-source">
+            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000024-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/stars_controller.rb, line 65</span>
-65:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">edit</span>
-66:     <span class="ruby-ivar">@star</span> = <span class="ruby-constant">Star</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
-67:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/stars_controller.rb, line 58</span>
+58:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">edit</span>
+59:     <span class="ruby-ivar">@star</span> = <span class="ruby-constant">Star</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+60:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000020" class="method-detail">
-        <a name="M000020"></a>
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
 
         <div class="method-heading">
-          <a href="#M000020" class="method-signature">
+          <a href="#M000021" class="method-signature">
           <span class="method-name">index</span><span class="method-args">()</span>
           </a>
         </div>
@@ -278,8 +271,8 @@ href="../Star.html">Star</a>モデルインスタンスの配列
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000020-source">
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
 <pre>
     <span class="ruby-comment cmt"># File app/controllers/admin/stars_controller.rb, line 17</span>
 17:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
@@ -290,11 +283,11 @@ href="../Star.html">Star</a>モデルインスタンスの配列
         </div>
       </div>
 
-      <div id="method-M000021" class="method-detail">
-        <a name="M000021"></a>
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
 
         <div class="method-heading">
-          <a href="#M000021" class="method-signature">
+          <a href="#M000022" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
@@ -314,8 +307,8 @@ href="../Star.html">Star</a>モデルインスタンスの配列
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000021-source">
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
 <pre>
     <span class="ruby-comment cmt"># File app/controllers/admin/stars_controller.rb, line 29</span>
 29:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new</span>
@@ -326,11 +319,11 @@ href="../Star.html">Star</a>モデルインスタンスの配列
         </div>
       </div>
 
-      <div id="method-M000024" class="method-detail">
-        <a name="M000024"></a>
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
 
         <div class="method-heading">
-          <a href="#M000024" class="method-signature">
+          <a href="#M000025" class="method-signature">
           <span class="method-name">update</span><span class="method-args">()</span>
           </a>
         </div>
@@ -354,18 +347,18 @@ href="../Star.html">Star</a>モデルのID
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000024-source">
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/stars_controller.rb, line 78</span>
-78:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>
-79:     <span class="ruby-ivar">@star</span> = <span class="ruby-constant">Star</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
-80:     <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:star</span>]
-81:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">save</span>
-82:       <span class="ruby-identifier">message</span> = <span class="ruby-value str">&quot;データの更新に失敗しました。&quot;</span>
-83:       <span class="ruby-identifier">model_errors</span>(<span class="ruby-identifier">:errors</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">message</span>)
-84:     <span class="ruby-keyword kw">end</span>
-85:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/stars_controller.rb, line 71</span>
+71:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>
+72:     <span class="ruby-ivar">@star</span> = <span class="ruby-constant">Star</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+73:     <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:star</span>]
+74:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">save</span>
+75:       <span class="ruby-identifier">message</span> = <span class="ruby-value str">&quot;データの更新に失敗しました。&quot;</span>
+76:       <span class="ruby-identifier">model_errors</span>(<span class="ruby-identifier">:errors</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@star</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">message</span>)
+77:     <span class="ruby-keyword kw">end</span>
+78:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

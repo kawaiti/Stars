@@ -13,7 +13,7 @@
   </tr>
   <tr>
     <th>残り<%= show_stars %>数</th>
-    <td><%= @member.own_stars %></td>
+    <td><%= show_stars( :number => (@member.role.default_stars - @member.sent_stars)) %></td>
   </tr>
   <tr>
     <th>受け取った<%= show_stars %>数</th>
