@@ -1,0 +1,26 @@
+<!--
+<script>
+DynamicData = function () {
+  var myColumnDefs = [ <%= yui_def %> ];
+  
+  var myDataSource = new YAHOO.util.DataSource("<%= url %>");
+  myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSON;
+  myDataSource.responseSchima = { <%= yui_schima %> };
+  
+  var myConfigs = { <%= yui_config %> };
+
+  var myDataTable = new YAHOO.widget.DataTable("dynamicdata", myColumnDefs, myDataSource, myConfigs);
+
+  myDataTable.handleDataReturnPayload = function(oRequest, oResponse, oPayload) { 
+    oPayload.totalRecords = oResponse.meta.totalRecords; 
+    return oPayload; 
+  } 
+	     
+  return { 
+    ds: myDataSource, 
+    dt: myDataTable 
+  }; 
+	         
+}();
+</script>
+-->
